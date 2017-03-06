@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type = "text/Javascript">
+function Human() {
+    this.name = "Human";
+    this.gender = "none";
+    this.Act = function () {
+        return this.name + " is walking";
+    }
+    this.WhatEat = function () {
+        return this.name + " is eating meat";
+    }
+}
+
+    function Gentleman(){
+        this.base = new Human();
+        this.name = "David";
+        this.gender = "male";
+        this.Act = function(){
+         return this.base.Act();
+         }
+        this.ActString = this.base.Act();
+
+        this.WhatEat = function(){
+            return this.name + " is eating sushi";
+        }
+    }
+
+    function Lady(){
+        this.name = "Misun";
+        this.gender = "female";
+        this.Act = function(){
+            return this.name + " is chatting with friends";
+        }
+    }
+
+    Gentleman.prototype = new Human();
+    var David = new Gentleman();
+
+    console.log( "Name : " + David.name );
+    console.log( "Gender  : " + David.gender );
+    console.log( "Act  : " + David.Act() );
+    console.log( "Act String  : " + David.ActString );
+    console.log( "What Eat : " + David.WhatEat() );
+
+    console.log("===========================");
+
+    Lady.prototype = new Human();
+    var Misun = new Lady();
+
+    console.log("Name : " + Misun.name );
+    console.log("Gender : " + Misun.gender );
+    console.log("Act : " + Misun.Act() );
+    console.log("What Eat : " + Misun.WhatEat() );
+
+    /* --------- Constructor  --------------  */
+
+
+
+</script>
+</body>
+</html>
