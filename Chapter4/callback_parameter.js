@@ -20,13 +20,13 @@ function logCar(make){
 }
 
 function logColorCar(make, color){
-    console.log("Saw a %s %s", color, make );
+    console.log("** Saw a %s %s", color, make );
 }
 
 show.on("sawCar", logCar );
 show.on("sawCar", function(make){
     var colors = ['red', 'blue', 'black'];
-    var color = colors[Math.floor(Math.random() *3)];
+    var color = colors[Math.floor(Math.random()*3)];
     logColorCar( make, color );
 });
 
