@@ -14,8 +14,6 @@ function sendResponse( weatherData, res ){
             '<input type="submit" value = "Get Weather">' +
             '</form>';
     if( weatherData ){
-        // page += '<h1>Weather Info</h1><p>' + weatherData + '</p>';
-        var strDesc = '';
         var weatherObj = JSON.parse(weatherData);
 
         strDesc = 'id: ' + weatherObj.weather[0].id + '<br>' +
