@@ -29,18 +29,7 @@ function getConnection( connName ) {
 
     return client;
 }
-/*
-function writeData(socket, data){
-    var success = !socket.write( data );
-    if( !success ){
-        (function(socket, data ){
-            socket.once( 'drain', function(){
-                writeData( socket, data);
-            });
-        })(socket, data);
-    }
-}
-*/
+
 
 function writeData(socket, data){
     var success = !socket.write(data);
